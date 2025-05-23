@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .btn-custom {
+      background-color: #6c63ff;
+      color: white;
+    }
+    .btn-custom:hover {
+      background-color: #5848d5;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-image: url('https://t4.ftcdn.net/jpg/05/66/28/43/360_F_566284344_5DqGysFklvdqVkb1t9HEZZJ0pqzVjlzz.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    .hero-img {
+      width: 250px;
+      height: 250px;
+      object-fit: fill;
+      border-radius: 50%;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .full-height-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .about-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, hsl(75, 67%, 99%), #91c2c0);
+      color: #1f2937;
+    }
+    .about-img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .skill-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #fff;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+    }
+    
+
+    #contact {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #f0f9ff, #ffffff);
+      color: #d11144;
+      background-image: url(https://www.anandgroupindia.com/wp-content/uploads/2019/05/contactus.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    #contact .form-control {
+      border-radius: 0.5rem;
+      border: 1px solid #ced4da;
+      padding: 0.75rem;
+      font-size: 1rem;
+    }
+
+    #contact .form-label {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    #contact .btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+    }
+
+    #contact .btn:hover {
+      box-shadow: 0 6px 16px rgba(32, 124, 69, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">MyPortfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPortfolio">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarPortfolio">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about"><i class="bi bi-person"></i> About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects"><i class="bi bi-folder2-open"></i> Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills"><i class="bi bi-lightbulb"></i> Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start" data-aos="fade-right">
+        <h1 class="display-4 fw-bold">Hi, I'm <span class="text-primary">Rekha Sri</span></h1>
+        <p class="lead mb-4">I'm a full-stack developer building modern and responsive web applications.</p>
+        <a href="#projects" class="btn btn-custom btn-lg me-3">View Projects</a>
+        <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+      </div>
+      <div class="col-md-6 text-center mt-4 mt-md-0" data-aos="fade-left">
+        <img src="images/1.jpg" alt="Hero Image" class="hero-img img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section full-height-section" id="about">
+  <div class="container">
+    <div class="row align-items-center text-center text-md-start">
+      <div class="col-md-4 mb-4 mb-md-0" data-aos="zoom-in">
+        <img src="images/2.jpg" alt="Profile Image" class="about-img shadow img-fluid">
+      </div>
+      <div class="col-md-8" data-aos="fade-left">
+        <h2 class="fw-bold mb-3">About Me</h2>
+        <p class="lead">I'm Rekha Sri, a full-stack developer with a passion for creating modern, responsive web apps.</p>
+        <p>I specialize in technologies like <strong>HTML, CSS, JavaScript, Bootstrap, React</strong>, and <strong>Node.js</strong>.</p>
+        <p>I'm currently focused on improving my skills in full-stack development and contributing to real-world projects. I'm a fast learner, team player, and always eager to explore the latest trends in web development.</p>
+        <p>When I’m not coding, I enjoy reading tech blogs, contributing to open-source, and experimenting with new UI designs.</p>
+        <button class="btn btn-custom mt-3" onclick="openResume()">Hire Me</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openResume() {
+      window.open('./Yarroju Rekha Sri RESUME.PDF','_blank');
+    }
+  </script>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(link =>
+    link.addEventListener('click', () => {
+      const navbar = document.querySelector('.navbar-collapse');
+      if (navbar.classList.contains('show')) {
+        new bootstrap.Collapse(navbar).toggle();
+      }
+    })
+  );
+</script>
+</body>
+</html>
+
+
+
+<section id="projects" class="py-5 bg-light full-height-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">My Projects</h2>
+      <p class="text-muted">Some of the work I've done recently</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+        <div class="card shadow-sm h-100">
+          <img src="./images/3.webp" class="card-img-top" alt="CSP Project">
+          <div class="card-body">
+            <h5 class="card-title">CSP Project</h5>
+            <p class="card-text">A Survey Based Study on Current Scenario of Generic Medicine.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card shadow-sm h-100">
+          <img src="./images/4.jpeg" class="card-img-top" alt="React JS Project">
+          <div class="card-body">
+            <h5 class="card-title">React JS</h5>
+            <p class="card-text">React is a JavaScript library used to build dynamic UIs for web and mobile apps.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card shadow-sm h-100">
+          <img src="./images/5.jpeg" class="card-img-top" alt="Coffee Website">
+          <div class="card-body">
+            <h5 class="card-title">Coffee Website</h5>
+            <p class="card-text">Built using HTML, CSS, JavaScript, Bootstrap. Supports CRUD operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="skills" class="py-5 bg-white full-height-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">My Skills</h2>
+      <p class="text-muted">Technologies I work with</p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" data-aos="fade-up">
+        <div class="text-center border p-4 rounded shadow-sm h-100 skill-card">
+          <i class="bi bi-code-slash display-5 text-danger mb-2"></i>
+          <h6 class="fw-semibold">HTML</h6>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center border p-4 rounded shadow-sm h-100 skill-card">
+          <i class="bi bi-palette-fill display-5 text-primary mb-2"></i>
+          <h6 class="fw-semibold">CSS</h6>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-center border p-4 rounded shadow-sm h-100 skill-card">
+          <i class="bi bi-filetype-js display-5 text-warning mb-2"></i>
+          <h6 class="fw-semibold">JavaScript</h6>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up">
+        <div class="text-center border p-4 rounded shadow-sm h-100 skill-card">
+          <i class="bi bi-bootstrap-fill display-5 text-primary mb-2"></i>
+          <h6 class="fw-semibold">Bootstrap</h6>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center border p-4 rounded shadow-sm h-100 skill-card">
+          <i class="bi bi-lightning-charge-fill display-5 text-info mb-2"></i>
+          <h6 class="fw-semibold">React</h6>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-center border p-4 rounded shadow-sm h-100 skill-card">
+          <i class="bi bi-hdd-network-fill display-5 text-success mb-2"></i>
+          <h6 class="fw-semibold">Node.js</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="full-height-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">Contact Me</h2>
+      <p class="text-muted">I'd love to hear from you</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="you@example.com">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="5" placeholder="Your message..."></textarea>
+          </div>
+          <button class="btn btn-custom">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center">
+  <div class="container">
+    <p class="mb-0">&copy; 2025 Rekha Sri. All rights reserved.</p>
+    <small>
+      <a href="https://www.linkedin.com/in/yarroju-rekhasri-60620a311/" target="_blank" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/Rekhasri9010" target="_blank" class="text-white me-3"><i class="bi bi-github"></i></a>
+      <a href="mailto:rekhasri5656@gmail.com" class="text-white"><i class="bi bi-envelope-fill"></i></a>
+    </small>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(link =>
+    link.addEventListener('click', () => {
+      const navbar = document.querySelector('.navbar-collapse');
+      if (navbar.classList.contains('show')) {
+        new bootstrap.Collapse(navbar).toggle();
+      }
+    })
+  );
+</script>
+</body>
+</html>
